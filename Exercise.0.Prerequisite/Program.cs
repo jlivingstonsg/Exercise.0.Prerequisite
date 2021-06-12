@@ -15,10 +15,10 @@ namespace Exercise._0.Prerequisite
     class Program
     {
 
-        static void Main(string[] args)
+        static void Main()
         {
 
-            DateTimeOffset dateTimeObj = DateTime.Now;
+            //DateTimeOffset dateTimeObj = DateTime.Now;
 
             Console.WriteLine("Exercise 0. Prerequisite");
             Console.WriteLine("------------------------------------------------------------");
@@ -41,6 +41,7 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number   7.   Calculate the area and volume of a circle respective sphere with the given radius.");
                     Console.WriteLine("Assignment number   8.   Input a decimal number. Then output square root of the number ");
                     Console.WriteLine("                         and the number raised to the power of 2 and 10..");
+                    Console.WriteLine("Assignment number   9.   Restaurant order. ");
 
 
 
@@ -82,6 +83,9 @@ namespace Exercise._0.Prerequisite
                             break;
                         case 8:
                             RunExerciseEight();
+                            break;
+                        case 9:
+                            RunExerciseNine();
                             break;
                         case 0:
                             keepAlive = false;
@@ -151,8 +155,8 @@ namespace Exercise._0.Prerequisite
         private static void RunExerciseq2()
         {
             String part = "if you're doing your";
-            part = part + " best, \t you won't have any";
-            String quote = part + " time to worry about failure.";  // part add first and second part and  \t  is Tab text 
+            part +=  " best, \t you won't have any";                //  Added   += and removed  (part +)
+            String quote = part + " time to worry about failure.";  // part add first and second part and  \t  is Tab in text 
             Console.WriteLine(quote);
             Console.WriteLine("-----------------------");
         }
@@ -210,12 +214,12 @@ namespace Exercise._0.Prerequisite
             Console.Write("Enter second number: ");
             double lastnumber6 = Convert.ToDouble(Console.ReadLine());
             //--------------------
-            double biggest6 = 0;
+            double biggest6;
             if (firstnumber6 > lastnumber6) 
             {biggest6 = firstnumber6;} else {biggest6 = lastnumber6;}
             Console.WriteLine("Biggest: " + biggest6);
             //--------------------
-            double smallest6 = 0;
+            double smallest6;
             if (firstnumber6 < lastnumber6)
             { smallest6 = firstnumber6; } else { smallest6 = lastnumber6; }
             Console.WriteLine("Smallest: " + smallest6);
@@ -273,6 +277,58 @@ namespace Exercise._0.Prerequisite
             Console.WriteLine("Raised to the power of 10: " + tal810.ToString("N", nfi));
 
         }
+
+        private static void RunExerciseNine()
+        {
+            DateTime now = DateTime.Now;
+            NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
+            nfi.NumberDecimalDigits = 4;
+            Console.WriteLine("What is your first name. ");
+            string firstname9 = Console.ReadLine();
+            //------------------------
+            Console.Write("Hello " + firstname9 + ". What year were you born?  ");
+            var yearborn = int.Parse(Console.ReadLine() ?? "");         
+            //------------------------
+            Console.Write("What month were you born (1 to 12)?  ");
+            var monthborn = int.Parse(Console.ReadLine() ?? "");
+            //------------------------
+            Console.Write("What day were you born (1 to 31)?  ");
+            var dayborn = int.Parse(Console.ReadLine() ?? "");
+            //------------------------
+            var birthday = new DateTime(yearborn, monthborn, dayborn);
+            var age = DateTime.Today.Year - birthday.Year;
+            if (birthday.Date > DateTime.Today.AddYears(-age)) age--;
+            //--------------------------------------
+            if (age > 18)
+            {
+                Console.Write("Do you want a beer? y/n  ");
+                string beeryesno9 = Console.ReadLine();
+                if (beeryesno9 == "y")
+                {           
+                        Console.WriteLine("Serve beer.");                  
+                }
+                else
+                {
+                    Console.Write("Do you want a coke? y/n  ");
+                    string cokeyesno9 = Console.ReadLine();
+                    if (cokeyesno9 == "y")
+                    {
+                        Console.WriteLine("Serve coke.");
+                    }
+                }
+            }
+            else
+            {
+                Console.Write("Do you want a coke? y/n  ");
+                string cokeyesno9 = Console.ReadLine();
+                if (cokeyesno9 == "y")
+                {        
+                        Console.WriteLine("Serve coke.");                    
+                }
+            }
+        }
+
+
 
 
     }// class Program
