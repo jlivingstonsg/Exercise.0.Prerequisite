@@ -12,8 +12,15 @@ using System.Globalization;
 namespace Exercise._0.Prerequisite
 {
 
+
+
     class Program
     {
+
+
+
+
+
 
         static void Main()
         {
@@ -42,13 +49,14 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number   8.   Input a decimal number. Then output square root of the number ");
                     Console.WriteLine("                         and the number raised to the power of 2 and 10..");
                     Console.WriteLine("Assignment number   9.   Restaurant order. ");
+                    Console.WriteLine("Assignment number  10.   Choose between 3 different options. ");
 
 
 
                     Console.WriteLine("---------------------------------------------------------------------------");
                     Console.Write("Enter assignment number (or 0 to exit): ");
                     var assignmentChoice = int.Parse(Console.ReadLine() ?? "");
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    // Console.ForegroundColor = ConsoleColor.Green;
                     switch (assignmentChoice)
                     {
                         case 111:
@@ -87,6 +95,14 @@ namespace Exercise._0.Prerequisite
                         case 9:
                             RunExerciseNine();
                             break;
+                        case 10:
+                            RunExerciseTen();
+                            break;
+ 
+
+
+
+                        //---------------------------------------
                         case 0:
                             keepAlive = false;
                             break;
@@ -95,7 +111,7 @@ namespace Exercise._0.Prerequisite
                             Console.WriteLine("That is not a valid assignment number !");
                             break;
                     }
-                    Console.ResetColor();
+                    //Console.ResetColor();
                     Console.WriteLine("Hit any key to continuel");
                     Console.ReadKey();
                     Console.Clear();
@@ -104,16 +120,19 @@ namespace Exercise._0.Prerequisite
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("That is not a valid assignment number!");
-                    Console.ResetColor();
+                    //Console.ResetColor();
                 }
 
             }// while (keepAlive)
 
 
+
+
+
         }// static void Main(string[] args)
 
 
-
+      
 
 
         private static void RunExerciseq1()
@@ -130,9 +149,9 @@ namespace Exercise._0.Prerequisite
 
         private static void RunExerciseOne()
         {
-               // Console.WriteLine("Ange ditt Förnamn.");
+            // Console.WriteLine("Ange ditt Förnamn.");
             string firstname = "Magnus";
-               //Console.WriteLine("Ange ditt efternamn.");
+            //Console.WriteLine("Ange ditt efternamn.");
             string lastname = "Ivarsson";
             Console.WriteLine("Hello " + firstname + " " + lastname + "!  I’m glad to inform you that you are the test subject of my very first assignment!");
         }
@@ -140,7 +159,7 @@ namespace Exercise._0.Prerequisite
 
         private static void RunExerciseTwo()
         {
-            string[] months = {"January", "February", "March", "April", "May", "June", "July", "September", "October", "November", "December"};
+            string[] months = { "January", "February", "March", "April", "May", "June", "July", "September", "October", "November", "December" };
 
             DateTime now = DateTime.Now;
             Console.WriteLine("Todays......date is {0} of {1} {2}", now.Day, months[now.Month - 1], now.Year);
@@ -155,7 +174,7 @@ namespace Exercise._0.Prerequisite
         private static void RunExerciseq2()
         {
             String part = "if you're doing your";
-            part +=  " best, \t you won't have any";                //  Added   += and removed  (part +)
+            part += " best, \t you won't have any";                //  Added   += and removed  (part +)
             String quote = part + " time to worry about failure.";  // part add first and second part and  \t  is Tab in text 
             Console.WriteLine(quote);
             Console.WriteLine("-----------------------");
@@ -168,26 +187,26 @@ namespace Exercise._0.Prerequisite
             string firstname = Console.ReadLine();
             Console.Write("Enter your last name: ");
             string lastname = Console.ReadLine();
-            Console.WriteLine( firstname + " " + lastname );
+            Console.WriteLine(firstname + " " + lastname);
         }
 
         private static void RunExerciseFour()
         {
             String str4 = "The quick fox Jumped Over the DOG";
-                       //  The brown fox jumped over the lazy dog
+            //  The brown fox jumped over the lazy dog
             Console.WriteLine(str4);
             str4 = str4.Replace("quick", "brown");
             str4 = str4.Replace("Jumped Over", "jumped over");
             str4 = str4.Replace("DOG", "lazy dog");
-            Console.WriteLine(str4);    
+            Console.WriteLine(str4);
         }
 
 
         private static void RunExerciseFive()
         {
             String str5 = "Arrays are very common in programming, they look something like: [1,2,3,4,5]";
-                                                                                        //  [1,4,5,6,7,8,9,10]
-            Console.WriteLine(str5);          
+            //  [1,4,5,6,7,8,9,10]
+            Console.WriteLine(str5);
             str5 = str5.Replace("Arrays are very common in programming, they look something like: [", "[");
             str5 = str5.Replace(",2,3,", ",");
             str5 = str5.Replace("]", ",6,7,8,9,10]");
@@ -215,8 +234,8 @@ namespace Exercise._0.Prerequisite
             double lastnumber6 = Convert.ToDouble(Console.ReadLine());
             //--------------------
             double biggest6;
-            if (firstnumber6 > lastnumber6) 
-            {biggest6 = firstnumber6;} else {biggest6 = lastnumber6;}
+            if (firstnumber6 > lastnumber6)
+            { biggest6 = firstnumber6; } else { biggest6 = lastnumber6; }
             Console.WriteLine("Biggest: " + biggest6);
             //--------------------
             double smallest6;
@@ -234,12 +253,12 @@ namespace Exercise._0.Prerequisite
             Console.WriteLine("Product (*): " + biggest6 + " x " + smallest6 + " = " + product6);
             //----------------------
             if (lastnumber6 == 0)
-            { Console.WriteLine("Second number can not be zero. Try again."); } 
-            else 
+            { Console.WriteLine("Second number can not be zero. Try again."); }
+            else
             {
                 double ratio6 = firstnumber6 / (double)lastnumber6;
                 Console.WriteLine("Ratio (/) : " + firstnumber6 + " / " + lastnumber6 + " = " + ratio6);
-            }                      
+            }
             //----------------------
 
 
@@ -253,9 +272,9 @@ namespace Exercise._0.Prerequisite
             Console.Write("Enter radius and I will calculate area of circle and volume of sphere: ");
             double radius6 = Convert.ToDouble(Console.ReadLine());
             //--------------------
-            double area6 = 3.141592 * radius6 * radius6 ;
+            double area6 = 3.141592 * radius6 * radius6;
             Console.WriteLine("Area of circle: " + area6.ToString("N", nfi));
-            double volume6 = ( 4 * 3.141592 * radius6 * radius6 * radius6 ) / 3;
+            double volume6 = (4 * 3.141592 * radius6 * radius6 * radius6) / 3;
             Console.WriteLine("Volume of sphere: " + volume6.ToString("N", nfi));
         }
 
@@ -280,14 +299,13 @@ namespace Exercise._0.Prerequisite
 
         private static void RunExerciseNine()
         {
-            DateTime now = DateTime.Now;
             NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
             nfi.NumberDecimalDigits = 4;
             Console.WriteLine("What is your first name. ");
             string firstname9 = Console.ReadLine();
             //------------------------
             Console.Write("Hello " + firstname9 + ". What year were you born?  ");
-            var yearborn = int.Parse(Console.ReadLine() ?? "");         
+            var yearborn = int.Parse(Console.ReadLine() ?? "");
             //------------------------
             Console.Write("What month were you born (1 to 12)?  ");
             var monthborn = int.Parse(Console.ReadLine() ?? "");
@@ -304,8 +322,8 @@ namespace Exercise._0.Prerequisite
                 Console.Write("Do you want a beer? y/n  ");
                 string beeryesno9 = Console.ReadLine();
                 if (beeryesno9 == "y")
-                {           
-                        Console.WriteLine("Serve beer.");                  
+                {
+                    Console.WriteLine("Serve beer.");
                 }
                 else
                 {
@@ -322,11 +340,101 @@ namespace Exercise._0.Prerequisite
                 Console.Write("Do you want a coke? y/n  ");
                 string cokeyesno9 = Console.ReadLine();
                 if (cokeyesno9 == "y")
-                {        
-                        Console.WriteLine("Serve coke.");                    
+                {
+                    Console.WriteLine("Serve coke.");
                 }
             }
         }
+
+
+
+
+        private static void RunExerciseTen()
+        {
+            
+                try
+                {
+                    Console.WriteLine("Choose between 3 different options.  1.Calculate a division.  2.Exercise 4.  3.Toggle the foreground colour. ");
+                    Console.Write("or 0 to exit): ");
+
+                    var assignmentChoice10 = int.Parse(Console.ReadLine() ?? "");
+                    // Console.ForegroundColor = ConsoleColor.Green;
+                    switch (assignmentChoice10)
+                    {
+                        case 1:
+                            RunExercise10one();
+                            break;
+                        case 2:
+                            RunExerciseFour();
+                            break;
+                        case 3:
+                            RunExercise10Three();
+                            break;
+                        //-------------------------------
+                        case 0:                            
+                            break;
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("That is not a valid assignment number !");
+                            break;
+                    }
+                    //Console.ResetColor();
+                    Console.WriteLine("Hit any key to continuel");
+                    Console.ReadKey();
+                    Console.Clear();
+                }// try 
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("That is not a valid assignment number!");
+                    //Console.ResetColor();
+                }
+
+           
+
+            static void RunExercise10one()
+            {
+                Console.Write("Enter first number: ");
+                double firstnumber6 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter second number: ");
+                double lastnumber6 = Convert.ToDouble(Console.ReadLine());
+                //----------------------
+                if (lastnumber6 == 0)
+                { Console.WriteLine("Second number can not be zero. Try again."); }
+                else
+                {
+                    double ratio6 = firstnumber6 / (double)lastnumber6;
+                    Console.WriteLine("Division (/) : " + firstnumber6 + " / " + lastnumber6 + " = " + ratio6);
+                }
+            }
+
+
+            static void RunExercise10Three()
+            {
+                int color10 = 1;
+                if (Console.ForegroundColor == ConsoleColor.Gray)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("____________Ändrar färg______________ ");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.WriteLine("____________Ändrar färg______________ ");
+                }
+
+
+            }//static void RunExerciseSix10one()
+
+
+
+
+
+        }//private static void RunExerciseTen()
+
+
+
+
 
 
 
