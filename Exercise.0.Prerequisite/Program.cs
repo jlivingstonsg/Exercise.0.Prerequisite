@@ -50,6 +50,7 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("                         and the number raised to the power of 2 and 10..");
                     Console.WriteLine("Assignment number   9.   Restaurant order. ");
                     Console.WriteLine("Assignment number  10.   Choose between 3 different options. ");
+                    Console.WriteLine("Assignment number  11.   Get going with iterations. ");
 
 
 
@@ -98,6 +99,10 @@ namespace Exercise._0.Prerequisite
                         case 10:
                             RunExerciseTen();
                             break;
+                        case 11:
+                            RunExerciseEleven();
+                            break;
+
  
 
 
@@ -394,6 +399,8 @@ namespace Exercise._0.Prerequisite
 
             static void RunExercise10one()
             {
+                NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
+                nfi.NumberDecimalDigits = 4;
                 Console.Write("Enter first number: ");
                 double firstnumber6 = Convert.ToDouble(Console.ReadLine());
                 Console.Write("Enter second number: ");
@@ -404,14 +411,13 @@ namespace Exercise._0.Prerequisite
                 else
                 {
                     double ratio6 = firstnumber6 / (double)lastnumber6;
-                    Console.WriteLine("Division (/) : " + firstnumber6 + " / " + lastnumber6 + " = " + ratio6);
+                    Console.WriteLine("Division (/) : " + firstnumber6 + " / " + lastnumber6 + " = " + ratio6.ToString("N", nfi));
                 }
             }
 
 
             static void RunExercise10Three()
-            {
-                int color10 = 1;
+            {                
                 if (Console.ForegroundColor == ConsoleColor.Gray)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -427,14 +433,64 @@ namespace Exercise._0.Prerequisite
             }//static void RunExerciseSix10one()
 
 
-
-
-
         }//private static void RunExerciseTen()
 
 
 
+        private static void RunExerciseEleven()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("Enter a number above zero: ");
+            int tal11 = Convert.ToInt32(Console.ReadLine());
+            //------------------------
+            if (tal11 > 0)
+            {
+                for (int i = 0; i < tal11 + 1; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(i);
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine(i);
+                        Console.ResetColor();
+                    }
 
+
+                }
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("------------------------------- ");
+                Console.ResetColor();
+                for (int i = 0; i < (tal11 + 1); i++)
+                {
+                    if ((tal11 - i) % 2 == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(tal11 - i);
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine(tal11 - i);
+                        Console.ResetColor();
+                    }
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("____________Not allowed integer !!!__________-- ");
+                Console.ResetColor();
+
+            }
+           
+
+        }//private static void RunExerciseEleven()
 
 
 
