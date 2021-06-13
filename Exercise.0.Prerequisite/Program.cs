@@ -53,6 +53,7 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number  11.   Get going with iterations. ");
                     Console.WriteLine("Assignment number  12.   Multiplication table for 1 to 10. ");
                     Console.WriteLine("Assignment number  13.   Guess which number. ");
+                    Console.WriteLine("Assignment number  14.   Sum and average of the numbers. ");
 
                    
 
@@ -110,7 +111,9 @@ namespace Exercise._0.Prerequisite
                         case 13:
                             RunExerciseThirteen();
                             break;
-
+                        case 14:
+                            RunExerciseFourteen();
+                            break;
 
 
                             
@@ -518,7 +521,7 @@ namespace Exercise._0.Prerequisite
         {
             Random rnd13 = new Random();
             int rand613 = rnd13.Next(1, 501);
-            Console.Write("Gissa heltalet mellan 1 och 500? (Med facit.): ");
+            Console.Write("Guess number between 1 och 500.  (Med facit.) ");
             double tal6113 = Convert.ToDouble(Console.ReadLine());
             int count6213 = 0;
             //--------------------------------
@@ -527,20 +530,19 @@ namespace Exercise._0.Prerequisite
                 if (tal6113 == rand613)
                 {
                     count6213 += 1;
-                    Console.WriteLine("Rätt tal på " + count6213 + "'e försöket.");
-                    break;
+                    Console.WriteLine("Correct number on " + count6213 + " try.");                    
                 }
                 else
                 {
                     count6213 += 1;
                     if (tal6113 > rand613)
                     {
-                        Console.Write("För stort tal. Försök igen. ___ (Facit: " + rand613 + "): ");
+                        Console.Write("Your guess was too big. Try again. ___ (Facit: " + rand613 + "): ");
                         
                     }
                     else
                     {
-                        Console.Write("För litet tal. Försök igen. ___ (Facit: " + rand613 + "): ");
+                        Console.Write("Your guess was too small. Try again. ___ (Facit: " + rand613 + "): ");
                     }
                     tal6113 = Convert.ToDouble(Console.ReadLine());
                 }
@@ -549,13 +551,37 @@ namespace Exercise._0.Prerequisite
 
             if (tal6113 < 1 | tal6113 > 501)
             {
-                Console.WriteLine("Tal utanför 1 - 500. Tack för idag.");
+                Console.WriteLine("Wrong input: 1 - 500. Bye.");
             }
-
         }//private static void RunExerciseThirteen()
 
 
 
+        private static void RunExerciseFourteen()
+        {
+            NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
+            nfi.NumberDecimalDigits = 4;
+            double number14 = 0;
+            double sum14 = 0;
+            double average14 = 0;
+            double counter14 = -1;
+
+            do
+            {
+                if (-1 != number14)
+                {
+                    counter14 += 1;
+                    sum14 += number14;
+                }
+                Console.Write("Enter a number: ");
+                number14 = Convert.ToDouble(Console.ReadLine());
+                //--------------------                              
+                average14 = sum14 / counter14;
+            }
+            while (-1 != number14);
+            Console.WriteLine("Sum: " + sum14);                
+            Console.WriteLine("Average: " + average14.ToString("N", nfi));                                  
+        }//private static void RunExerciseFourteen()
 
 
 
