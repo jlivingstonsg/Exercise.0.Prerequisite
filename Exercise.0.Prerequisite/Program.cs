@@ -51,6 +51,7 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number   9.   Restaurant order. ");
                     Console.WriteLine("Assignment number  10.   Choose between 3 different options. ");
                     Console.WriteLine("Assignment number  11.   Get going with iterations. ");
+                    Console.WriteLine("Assignment number  12.   Multiplication table for 1 to 10. ");
 
 
 
@@ -101,6 +102,9 @@ namespace Exercise._0.Prerequisite
                             break;
                         case 11:
                             RunExerciseEleven();
+                            break;
+                        case 12:
+                            RunExerciseTwelve();
                             break;
 
  
@@ -491,6 +495,24 @@ namespace Exercise._0.Prerequisite
            
 
         }//private static void RunExerciseEleven()
+
+
+        private static void RunExerciseTwelve()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                for (int j = 1; j <= 10; j++)
+                {
+                    Console.Write(i * j + "\t");
+                }
+                Console.Write("\n");
+            }
+        }//private static void RunExerciseTwelve()
+
+
+
+
+
 
 
 
