@@ -52,8 +52,9 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number  10.   Choose between 3 different options. ");
                     Console.WriteLine("Assignment number  11.   Get going with iterations. ");
                     Console.WriteLine("Assignment number  12.   Multiplication table for 1 to 10. ");
+                    Console.WriteLine("Assignment number  13.   Guess which number. ");
 
-
+                   
 
                     Console.WriteLine("---------------------------------------------------------------------------");
                     Console.Write("Enter assignment number (or 0 to exit): ");
@@ -106,10 +107,13 @@ namespace Exercise._0.Prerequisite
                         case 12:
                             RunExerciseTwelve();
                             break;
+                        case 13:
+                            RunExerciseThirteen();
+                            break;
 
- 
 
 
+                            
 
                         //---------------------------------------
                         case 0:
@@ -128,8 +132,8 @@ namespace Exercise._0.Prerequisite
                 catch
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("That is not a valid assignment number!");
-                    //Console.ResetColor();
+                    Console.WriteLine("That is not a valid key !");
+                    Console.ResetColor();
                 }
 
             }// while (keepAlive)
@@ -510,7 +514,45 @@ namespace Exercise._0.Prerequisite
         }//private static void RunExerciseTwelve()
 
 
+        private static void RunExerciseThirteen()
+        {
+            Random rnd13 = new Random();
+            int rand613 = rnd13.Next(1, 501);
+            Console.Write("Gissa heltalet mellan 1 och 500? (Med facit.): ");
+            double tal6113 = Convert.ToDouble(Console.ReadLine());
+            int count6213 = 0;
+            //--------------------------------
+            while (tal6113 > 0 & tal6113 < 501)
+            {
+                if (tal6113 == rand613)
+                {
+                    count6213 += 1;
+                    Console.WriteLine("Rätt tal på " + count6213 + "'e försöket.");
+                    break;
+                }
+                else
+                {
+                    count6213 += 1;
+                    if (tal6113 > rand613)
+                    {
+                        Console.Write("För stort tal. Försök igen. ___ (Facit: " + rand613 + "): ");
+                        
+                    }
+                    else
+                    {
+                        Console.Write("För litet tal. Försök igen. ___ (Facit: " + rand613 + "): ");
+                    }
+                    tal6113 = Convert.ToDouble(Console.ReadLine());
+                }
 
+            }
+
+            if (tal6113 < 1 | tal6113 > 501)
+            {
+                Console.WriteLine("Tal utanför 1 - 500. Tack för idag.");
+            }
+
+        }//private static void RunExerciseThirteen()
 
 
 
