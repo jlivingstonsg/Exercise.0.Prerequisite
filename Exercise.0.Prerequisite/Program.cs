@@ -55,6 +55,8 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number  13.   Guess which number. ");
                     Console.WriteLine("Assignment number  14.   Sum and average of the numbers. ");
 
+                    Console.WriteLine("Assignment number  18.   Get going with arrays. ");
+
                    
 
                     Console.WriteLine("---------------------------------------------------------------------------");
@@ -114,6 +116,19 @@ namespace Exercise._0.Prerequisite
                         case 14:
                             RunExerciseFourteen();
                             break;
+                        case 15:
+                            Console.WriteLine("15. (Optional) Not in use !");
+                            break;
+                        case 16:
+                            Console.WriteLine("16. (Optional) Not in use !");
+                            break;
+                        case 17:
+                            Console.WriteLine("17. (Optional) Not in use !");
+                            break;
+                        case 18:
+                            RunExerciseEighteen();                            
+                            break;
+
 
 
                             
@@ -563,7 +578,7 @@ namespace Exercise._0.Prerequisite
             nfi.NumberDecimalDigits = 4;
             double number14 = 0;
             double sum14 = 0;
-            double average14 = 0;
+            double average14;
             double counter14 = -1;
 
             do
@@ -582,6 +597,44 @@ namespace Exercise._0.Prerequisite
             Console.WriteLine("Sum: " + sum14);                
             Console.WriteLine("Average: " + average14.ToString("N", nfi));                                  
         }//private static void RunExerciseFourteen()
+
+
+
+        private static void RunExerciseEighteen()
+        {
+            int Min = 55;
+            int Max = 99;
+           
+            int[] test181 = new int[10];
+            Random randNum = new Random();
+            for (int i = 0; i < test181.Length; i++)
+            {
+                test181[i] = randNum.Next(Min, Max);
+            }
+
+            double[] test182 = new double[10];
+            for (int i = 0; i < test182.Length; i++)
+            {
+                test182[i] = randNum.Next(Min, Max);
+                test182[i] = 1 / test182[i];
+            }
+
+            foreach (int items181 in test181)
+            {
+                Console.WriteLine("Random int: " + items181);
+            }
+            Console.WriteLine("------------------");
+
+            foreach (double items182 in test182)
+            {
+                Console.WriteLine("Random double: " + items182);
+            }
+
+
+        }//private static void RunExerciseEighteen()
+
+
+
 
 
 
