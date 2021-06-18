@@ -58,6 +58,10 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number  18.   Get going with arrays. ");
                     Console.WriteLine("Assignment number  19.   Calculate change. ");
 
+                    Console.WriteLine("Assignment number  21.   Min, max and average value. ");
+
+                    Console.WriteLine("Assignment number  25.   Input two valid integer value and divide them. ");
+
                    
 
 
@@ -133,10 +137,25 @@ namespace Exercise._0.Prerequisite
                         case 19:
                             RunExerciseNineteen();                            
                             break;
+                        case 20:
+                            Console.WriteLine("20. (Optional) Not in use !");
+                            break;
+                        case 21:
+                            RunExercise21();                            
+                            break;
+                        case 22:
+                            Console.WriteLine("20. (Optional) Not in use !");
+                            break;
+                        case 23:
+                            Console.WriteLine("20. (Optional) Not in use !");
+                            break;
+                        case 24:
+                            Console.WriteLine("20. (Optional) Not in use !");
+                            break;
+                        case 25:
+                            RunExercise25();
+                            break;
 
-
-
-                            
 
                         //---------------------------------------
                         case 0:
@@ -660,6 +679,45 @@ namespace Exercise._0.Prerequisite
             Console.ResetColor();
 
         }// private static void RunExerciseNineteen()--------------------------------------------------------------------------------------------
+
+
+
+        private static void RunExercise21()
+        {
+            Console.WriteLine("Write some numbers separated with a comma sign like this and you get min, max and average value.  ");
+            string array14 = (Console.ReadLine());
+            int[] arr21 = Array.ConvertAll(array14.Split(','), int.Parse);
+
+           
+            Console.WriteLine("Lowest number  is {0}", arr21.Min());
+            Console.WriteLine("Highest number is {0}", arr21.Max());
+            Console.WriteLine("Average        is {0}", arr21.Average());
+            Console.WriteLine("-------------------End--------------------- ");
+
+           
+        }// private static void RunExercise21()------------------------------------------------------------------------------------------
+
+
+
+
+        private static void RunExercise25()
+        {
+            Console.WriteLine("Ta reda på största talet. Skriv in första talet och använd ',' för decimaltal. ");
+            double tal51 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Skriv det andra talet.");
+            double tal52 = Convert.ToDouble(Console.ReadLine());
+            if (tal51 > tal52)
+            {
+                Console.WriteLine("Det första var störst.");
+            }
+            else
+            {
+                Console.WriteLine("Det andra var störst.");
+            }
+
+        }//private static void
+
+
 
 
 
