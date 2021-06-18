@@ -56,8 +56,10 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number  14.   Sum and average of the numbers. ");
 
                     Console.WriteLine("Assignment number  18.   Get going with arrays. ");
+                    Console.WriteLine("Assignment number  19.   Calculate change. ");
 
                    
+
 
                     Console.WriteLine("---------------------------------------------------------------------------");
                     Console.Write("Enter assignment number (or 0 to exit): ");
@@ -128,6 +130,9 @@ namespace Exercise._0.Prerequisite
                         case 18:
                             RunExerciseEighteen();                            
                             break;
+                        case 19:
+                            RunExerciseNineteen();                            
+                            break;
 
 
 
@@ -163,7 +168,7 @@ namespace Exercise._0.Prerequisite
         }// static void Main(string[] args)
 
 
-      
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
         private static void RunExerciseq1()
@@ -176,7 +181,7 @@ namespace Exercise._0.Prerequisite
             Console.Write(" world!");//Byter inte rad
             Console.WriteLine("  ");
             Console.WriteLine("-----------------------");
-        }
+        }//private static void RunExerciseq1()----------------------------------------------------------------------------------------------------------------------
 
         private static void RunExerciseOne()
         {
@@ -185,7 +190,7 @@ namespace Exercise._0.Prerequisite
             //Console.WriteLine("Ange ditt efternamn.");
             string lastname = "Ivarsson";
             Console.WriteLine("Hello " + firstname + " " + lastname + "!  I’m glad to inform you that you are the test subject of my very first assignment!");
-        }
+        }//private static void RunExerciseOne()----------------------------------------------------------------------------------------------------------------------
 
 
         private static void RunExerciseTwo()
@@ -199,7 +204,7 @@ namespace Exercise._0.Prerequisite
             Console.WriteLine("Tomorrows...date is {0} of {1} {2}", dt1.Day, months[now.Month - 1], now.Year);
             DateTime dt2 = dt.AddDays(-2);
             Console.WriteLine("Yesterdays..date was {0} of {1} {2}", dt2.Day, months[now.Month - 1], now.Year);
-        }
+        }//private static void RunExerciseTwo()--------------------------------------------------------------------------------------------------------------
 
 
         private static void RunExerciseq2()
@@ -209,7 +214,7 @@ namespace Exercise._0.Prerequisite
             String quote = part + " time to worry about failure.";  // part add first and second part and  \t  is Tab in text 
             Console.WriteLine(quote);
             Console.WriteLine("-----------------------");
-        }
+        }//private static void RunExerciseq2()-----------------------------------------------------------------------------------------------------------------------
 
 
         private static void RunExerciseThree()
@@ -219,7 +224,7 @@ namespace Exercise._0.Prerequisite
             Console.Write("Enter your last name: ");
             string lastname = Console.ReadLine();
             Console.WriteLine(firstname + " " + lastname);
-        }
+        }//private static void RunExerciseThree()
 
         private static void RunExerciseFour()
         {
@@ -230,7 +235,7 @@ namespace Exercise._0.Prerequisite
             str4 = str4.Replace("Jumped Over", "jumped over");
             str4 = str4.Replace("DOG", "lazy dog");
             Console.WriteLine(str4);
-        }
+        }//private static void RunExerciseFour()---------------------------------------------------------------------------------------------
 
 
         private static void RunExerciseFive()
@@ -242,7 +247,7 @@ namespace Exercise._0.Prerequisite
             str5 = str5.Replace(",2,3,", ",");
             str5 = str5.Replace("]", ",6,7,8,9,10]");
             Console.WriteLine(str5);
-        }
+        }//private static void RunExerciseFive()----------------------------------------------------------------------------------------------
 
 
 
@@ -254,7 +259,7 @@ namespace Exercise._0.Prerequisite
             double average = (a + b) / (double)2;  // paranteser och  (double) i nämnaren
             Console.WriteLine(average);
             Console.WriteLine("-----------------------");
-        }
+        }//private static void RunExerciseq5()------------------------------------------------------------------------------------------------------
 
 
         private static void RunExerciseSix()
@@ -289,11 +294,8 @@ namespace Exercise._0.Prerequisite
             {
                 double ratio6 = firstnumber6 / (double)lastnumber6;
                 Console.WriteLine("Ratio (/) : " + firstnumber6 + " / " + lastnumber6 + " = " + ratio6);
-            }
-            //----------------------
-
-
-        }
+            }           
+        }//private static void RunExerciseSix()------------------------------------------------------------------------------------------------------
 
 
         private static void RunExerciseSeven()
@@ -307,7 +309,7 @@ namespace Exercise._0.Prerequisite
             Console.WriteLine("Area of circle: " + area6.ToString("N", nfi));
             double volume6 = (4 * 3.141592 * radius6 * radius6 * radius6) / 3;
             Console.WriteLine("Volume of sphere: " + volume6.ToString("N", nfi));
-        }
+        }//private static void RunExerciseSeven()
 
 
         private static void RunExerciseEight()
@@ -326,7 +328,7 @@ namespace Exercise._0.Prerequisite
             double tal810 = Math.Pow(tal8, 10);
             Console.WriteLine("Raised to the power of 10: " + tal810.ToString("N", nfi));
 
-        }
+        }//private static void RunExerciseEight()-------------------------------------------------------------------------------------------
 
         private static void RunExerciseNine()
         {
@@ -375,7 +377,7 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Serve coke.");
                 }
             }
-        }
+        }//private static void RunExerciseNine()--------------------------------------------------------------------------------------------
 
 
 
@@ -385,7 +387,7 @@ namespace Exercise._0.Prerequisite
             
                 try
                 {
-                    Console.WriteLine("Choose between 3 different options.  1.Calculate a division.  2.Exercise 4.  3.Toggle the foreground colour. ");
+                    Console.WriteLine("Choose between 3 different options.  1.Calculate a division.  2.Exercise 4.  3.Toggle the foreground color. ");
                     Console.Write("or 0 to exit): ");
 
                     var assignmentChoice10 = int.Parse(Console.ReadLine() ?? "");
@@ -459,7 +461,7 @@ namespace Exercise._0.Prerequisite
             }//static void RunExerciseSix10one()
 
 
-        }//private static void RunExerciseTen()
+        }//private static void RunExerciseTen()--------------------------------------------------------------------------------------------------
 
 
 
@@ -516,7 +518,7 @@ namespace Exercise._0.Prerequisite
             }
            
 
-        }//private static void RunExerciseEleven()
+        }//private static void RunExerciseEleven()---------------------------------------------------------------------------
 
 
         private static void RunExerciseTwelve()
@@ -529,7 +531,7 @@ namespace Exercise._0.Prerequisite
                 }
                 Console.Write("\n");
             }
-        }//private static void RunExerciseTwelve()
+        }//private static void RunExerciseTwelve()-----------------------------------------------------------------------
 
 
         private static void RunExerciseThirteen()
@@ -568,7 +570,7 @@ namespace Exercise._0.Prerequisite
             {
                 Console.WriteLine("Wrong input: 1 - 500. Bye.");
             }
-        }//private static void RunExerciseThirteen()
+        }//private static void RunExerciseThirteen()---------------------------------------------------------------------------
 
 
 
@@ -596,7 +598,7 @@ namespace Exercise._0.Prerequisite
             while (-1 != number14);
             Console.WriteLine("Sum: " + sum14);                
             Console.WriteLine("Average: " + average14.ToString("N", nfi));                                  
-        }//private static void RunExerciseFourteen()
+        }//private static void RunExerciseFourteen()------------------------------------------------------------------
 
 
 
@@ -604,34 +606,60 @@ namespace Exercise._0.Prerequisite
         {
             int Min = 55;
             int Max = 99;
-           
-            int[] test181 = new int[10];
             Random randNum = new Random();
+            int[] test181 = new int[10];
             for (int i = 0; i < test181.Length; i++)
             {
                 test181[i] = randNum.Next(Min, Max);
             }
-
             double[] test182 = new double[10];
             for (int i = 0; i < test182.Length; i++)
             {
                 test182[i] = randNum.Next(Min, Max);
                 test182[i] = 1 / test182[i];
             }
-
             foreach (int items181 in test181)
             {
                 Console.WriteLine("Random int: " + items181);
             }
             Console.WriteLine("------------------");
-
             foreach (double items182 in test182)
             {
                 Console.WriteLine("Random double: " + items182);
             }
 
+        }//private static void RunExerciseEighteen()-----------------------------------------------------------------
 
-        }//private static void RunExerciseEighteen()
+
+
+        private static void RunExerciseNineteen()
+        {
+            Random rnd13 = new Random();
+            int rand19 = rnd13.Next(1, 10001);
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Money to pay: {0} kr.", rand19);
+            Console.Write("Enter the sum you pay: ");
+            int sum19 = Convert.ToInt32(Console.ReadLine());
+            int change =  sum19 - rand19;
+            Console.WriteLine("Calculated change: {0} kr.", change);
+            Console.WriteLine("Coins distribution: ");
+            List<int> amounts19 = new List<int>() { 1000,500, 100, 50, 20, 10, 5, 1 };
+            int hundreds;
+            int index19 = 0;
+            foreach (var item19 in amounts19)
+            {               
+                hundreds = (int)(change / amounts19[index19]);
+                Console.WriteLine("{0} coins = Quantity: {1} ", amounts19[index19], hundreds);
+                change = change % amounts19[index19];
+                index19++;
+                                   
+            
+            }
+
+            Console.WriteLine("-------------------End--------------------- ");
+            Console.ResetColor();
+
+        }// private static void RunExerciseNineteen()--------------------------------------------------------------------------------------------
 
 
 
