@@ -669,7 +669,7 @@ namespace Exercise._0.Prerequisite
             {               
                 hundreds = (int)(change / amounts19[index19]);
                 Console.WriteLine("{0} coins = Quantity: {1} ", amounts19[index19], hundreds);
-                change = change % amounts19[index19];
+                change %= amounts19[index19];
                 index19++;
                                    
             
@@ -702,18 +702,71 @@ namespace Exercise._0.Prerequisite
 
         private static void RunExercise25()
         {
-            Console.WriteLine("Ta reda på största talet. Skriv in första talet och använd ',' för decimaltal. ");
-            double tal51 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Skriv det andra talet.");
-            double tal52 = Convert.ToDouble(Console.ReadLine());
-            if (tal51 > tal52)
+
+            int int25;
+            double div25;
+            bool bool25 = false;
+            do
             {
-                Console.WriteLine("Det första var störst.");
+
+                
+                try
+                {
+                    int tal125, tal225;
+                    Console.Write(" Input two valid integer value and divide them. \n Write the first here:  ");
+                    tal125 = Convert.ToInt32(Console.ReadLine());
+                    double dtal125 = Convert.ToDouble(tal125);
+                    Console.Write(" Write the second here: ");
+                    tal225 = int.Parse(Console.ReadLine());
+                    double dtal225 = Convert.ToDouble(tal225);
+
+                    int25 = tal125 / tal225;
+                    div25 = dtal125 / dtal225;
+
+                    Console.WriteLine(" Divisionen   {0} / {1} =  {2} ", tal125, tal225, div25);
+                    bool25 = true;
+                    Console.WriteLine("-------------------End---------------------- ");
+                }
+
+                //Multiple Catch block to handle exception
+
+                catch (DivideByZeroException dex)
+                {
+                    Console.WriteLine(" You can not use 0 as denominator in division. ");
+                    Console.WriteLine(" More Details about Error: \n\n" + dex.ToString() + "\n\n");
+                }
+
+                catch (FormatException fex)
+                {
+                    Console.WriteLine(" Invalid Input");
+                    Console.WriteLine(" More Details about Error: \n\n" + fex.ToString() + "\n\n");
+                }
+
+                //Parent Exception: Catch all type of exception
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(" Other Exception raised" + ex.ToString() + "\n\n");
+                }
+
+                
+                //Finally block: it always executes
+                finally
+                {
+                    Console.WriteLine(" Finally Block: For Continue Press Enter and for Exit press Ctrl + c");
+                    Console.ReadLine();
+                }
+                
             }
-            else
-            {
-                Console.WriteLine("Det andra var störst.");
-            }
+            while (bool25);
+
+
+
+
+
+
+
+            
 
         }//private static void
 
