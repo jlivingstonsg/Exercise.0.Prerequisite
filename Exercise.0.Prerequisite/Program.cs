@@ -61,6 +61,7 @@ namespace Exercise._0.Prerequisite
                     Console.WriteLine("Assignment number  21.   Min, max and average value. ");
 
                     Console.WriteLine("Assignment number  25.   Input two valid integer value and divide them. ");
+                    Console.WriteLine("Assignment number  26.   Print out the folder path and create a new file. ");
 
                    
 
@@ -155,6 +156,12 @@ namespace Exercise._0.Prerequisite
                         case 25:
                             RunExercise25();
                             break;
+                        case 26:
+                            RunExercise26();
+                            break;
+                       
+                            
+
 
 
                         //---------------------------------------
@@ -760,18 +767,51 @@ namespace Exercise._0.Prerequisite
             }
             while (bool25);
 
+        }// private static void RunExercise25()---------------------------------------------------------------------------------
 
 
 
+        private static void RunExercise26()
+        {
+            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("GetFolderPath: My Documents:       {0}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            Console.WriteLine("GetFolderPath: My Pictures:        {0}", Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            Console.WriteLine("GetFolderPath: Program Files X86:  {0}", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86));
+            Console.WriteLine("GetFolderPath: Cookies:            {0}", Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
+            Console.WriteLine("GetFolderPath: Current Directory:  {0}", Environment.CurrentDirectory);
+            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("GetFolderPath: Desktop:            {0}", Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+
+            Console.WriteLine("-------------------------------End-------------------------------");
 
 
+            string path26 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\MyTest.txt";
 
-            
+            if (!File.Exists(path26))
+            {
+                // Create a file to write to.
+                //using StreamWriter sw = File.CreateText(path);
+                using StreamWriter writer26 = new StreamWriter(path26, true);
+                {
+                    writer26.WriteLine("Hello");
+                    writer26.WriteLine("And");
+                    writer26.WriteLine("Welcome");
+                    writer26.Close();
+                }                
+            }
 
-        }//private static void
+            // Open the file to read from.
+            using (StreamReader sr = File.OpenText(path26))
+            {
+                string str26 = "";
+                while ((str26 = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(str26);
+                    Console.WriteLine("-----------------------------------------------------------------");
+                }
+            }       
 
-
-
+        }//private static void RunExercise26()-----------------------------------------------------------------------
 
 
 
