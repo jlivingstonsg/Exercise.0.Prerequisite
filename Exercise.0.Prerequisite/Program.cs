@@ -62,7 +62,8 @@ namespace Exercise._0.Prerequisite
 
                     Console.WriteLine("Assignment number  25.   Input two valid integer value and divide them. ");
                     Console.WriteLine("Assignment number  26.   Print out the folder path and create a new file. ");
-                    Console.WriteLine("Assignment number  27.   Print out the folder path and create a new file. ");
+                    Console.WriteLine("Assignment number  27.   Reading a file. ");
+                    Console.WriteLine("Assignment number  28.   Writing to a file. ");
 
                    
 
@@ -162,6 +163,9 @@ namespace Exercise._0.Prerequisite
                             break;
                         case 27:
                             RunExercise27();
+                            break;
+                       case 28:
+                            RunExercise28();
                             break;
                        
                             
@@ -847,6 +851,40 @@ namespace Exercise._0.Prerequisite
 
 
         }// private static void RunExercise27()-----------------------------------------------------------------------------------------
+
+
+
+
+        private static void RunExercise28()
+        {
+
+
+            try
+            {
+                string path26 = "C:\\Users\\Magi.MAGI-VAIO\\source\repos\\Exercise.0.Prerequisite\\Exercise.0.Prerequisite\\MyName.txt";
+
+                //Pass the filepath and filename to the StreamWriter Constructor
+                StreamWriter sw28 = new StreamWriter(path26, true);
+                //Write a line of text
+                sw28.WriteLine("Hello World!!");
+                //Write a second line of text
+                sw28.WriteLine("From the StreamWriter class");
+                //Close the file
+                sw28.Close();
+            }
+            catch (Exception e28)
+            {
+                Console.WriteLine("Exception: " + e28.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Executing finally block.");
+            }            
+
+        }// private static void RunExercise28()-----------------------------------------------------------------------------------------
+
+
+
 
 
     }// class Program
