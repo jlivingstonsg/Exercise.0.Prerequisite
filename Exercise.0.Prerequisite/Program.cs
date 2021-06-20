@@ -62,6 +62,7 @@ namespace Exercise._0.Prerequisite
 
                     Console.WriteLine("Assignment number  25.   Input two valid integer value and divide them. ");
                     Console.WriteLine("Assignment number  26.   Print out the folder path and create a new file. ");
+                    Console.WriteLine("Assignment number  27.   Print out the folder path and create a new file. ");
 
                    
 
@@ -158,6 +159,9 @@ namespace Exercise._0.Prerequisite
                             break;
                         case 26:
                             RunExercise26();
+                            break;
+                        case 27:
+                            RunExercise27();
                             break;
                        
                             
@@ -814,7 +818,35 @@ namespace Exercise._0.Prerequisite
         }//private static void RunExercise26()-----------------------------------------------------------------------
 
 
+        private static void RunExercise27()
+        {
 
+
+            try
+            {
+                // Create an instance of StreamReader to read from a file.
+                // The using statement also closes the StreamReader.
+                using (StreamReader sr27 = new StreamReader("MyName.txt"))
+                {
+                    string line;
+                    // Read and display lines from the file until the end of
+                    // the file is reached.
+                    while ((line = sr27.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception e27)
+            {
+                // Let the user know what went wrong.
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e27.Message);
+            }
+
+
+
+        }// private static void RunExercise27()-----------------------------------------------------------------------------------------
 
 
     }// class Program

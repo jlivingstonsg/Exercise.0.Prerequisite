@@ -6,4 +6,10 @@
     <RootNamespace>Exercise._0.Prerequisite</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="MyName.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
